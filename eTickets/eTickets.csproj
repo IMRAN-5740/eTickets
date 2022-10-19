@@ -6,4 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Cqrs" Version="4.4.1.21" />
+    <PackageReference Include="IKVM" Version="8.2.1" />
+  </ItemGroup>
+
 </Project>
