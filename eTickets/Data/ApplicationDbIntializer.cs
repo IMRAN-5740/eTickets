@@ -24,8 +24,8 @@ namespace eTickets.Data
                             Description="This is the Life Movie Description",
                             Price=39.50,
                             ImageURL="https://dotnethow.net/images/movies/movie-3.jpeg",
-                            StartDate=DateTime.Now.AddDays(-10),
-                            EndDate=DateTime.Now.AddDays(10),
+                            StartDate=DateTime.Now.AddDays(-5),
+                            EndDate=DateTime.Now.AddDays(-2),
                             CinemaId=36,
                             ProducerId=56,
                             MovieCategory=MovieCategory.Documentory
@@ -158,6 +158,12 @@ namespace eTickets.Data
                             Logo="https://dotnethow.net/images/cinemas/cinema-5.jpeg ",
                             Description="This is the description of the fifth Cinema"
                         },
+                         new Cinema()
+                        {
+                            Name="Cinema-6",
+                            Logo="https://dotnethow.net/images/cinemas/cinema-6.jpeg ",
+                            Description="This is the description of the sixth Cinema"
+                        }
                     }
                     );
                     context.SaveChanges();
