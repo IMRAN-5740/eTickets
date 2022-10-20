@@ -14,90 +14,76 @@ namespace eTickets.Data
                 context.Database.EnsureCreated();
 
                 //Movies
-          //      if (!context.Movies.Any())
-          //      {
-          //          context.Movies.AddRange(new List<Movie>()
-          //          {
-          //              new Movie()
-          //              {
-          //                  Name="Life",
-          //                  Description="This is the Life Movie Description",
-          //                  Price=39.50,
-          //                  ImageURL="https://dotnethow.net/images/movies/movie-3.jpeg",
-          //                  StartDate=DateTime.Now.AddDays(-10),
-          //                  EndDate=DateTime.Now.AddDays(10),
-          //                  CinemaId=3,
-          //                  ProducerId=3,
-          //                  MovieCategory=MovieCategory.Documentory
-          //              },
-          //               new Movie()
-          //                  {
-          //                  Name="The Shawshank Redeption",
-          //                  Description="This is the Shawshank Redeption Movie Description",
-          //                  Price=29.50,
-          //                  ImageURL="https://dotnethow.net/images/movies/movie-1.jpeg",
-          //                  StartDate=DateTime.Now,
-          //                  EndDate=DateTime.Now.AddDays(4),
-          //                  CinemaId=1,
-          //                  ProducerId=1,
-          //                  MovieCategory=MovieCategory.Action
-          //                  },
-          //                new Movie()
-          //                  {
-          //                  Name="Ghost",
-          //                  Description="This is the Ghost Movie Description",
-          //                  Price=39.50,
-          //                  ImageURL="https://dotnethow.net/images/movies/movie-4.jpeg",
-          //                  StartDate=DateTime.Now,
-          //                  EndDate=DateTime.Now.AddDays(7),
-          //                  CinemaId=4,
-          //                  ProducerId=4,
-          //                  MovieCategory=MovieCategory.Horror
-          //                  },
+                if (!context.Movies.Any())
+                {
+                    context.Movies.AddRange(new List<Movie>()
+                    {
+                        new Movie()
+                        {
+                            Name="Life",
+                            Description="This is the Life Movie Description",
+                            Price=39.50,
+                            ImageURL="https://dotnethow.net/images/movies/movie-3.jpeg",
+                            StartDate=DateTime.Now.AddDays(-10),
+                            EndDate=DateTime.Now.AddDays(10),
+                            CinemaId=36,
+                            ProducerId=56,
+                            MovieCategory=MovieCategory.Documentory
+                        },
+                         new Movie()
+                            {
+                            Name="The Shawshank Redeption",
+                            Description="This is the Shawshank Redeption Movie Description",
+                            Price=29.50,
+                            ImageURL="https://dotnethow.net/images/movies/movie-1.jpeg",
+                            StartDate=DateTime.Now,
+                            EndDate=DateTime.Now.AddDays(4),
+                            CinemaId=37,
+                            ProducerId=57,
+                            MovieCategory=MovieCategory.Action
+                            },
+                          new Movie()
+                            {
+                            Name="Ghost",
+                            Description="This is the Ghost Movie Description",
+                            Price=39.50,
+                            ImageURL="https://dotnethow.net/images/movies/movie-4.jpeg",
+                            StartDate=DateTime.Now,
+                            EndDate=DateTime.Now.AddDays(7),
+                            CinemaId=38,
+                            ProducerId=58,
+                            MovieCategory=MovieCategory.Horror
+                            },
 
-          //                 new Movie()
-          //                  {
-          //                  Name="Scoob",
-          //                  Description="This is the Scoob Movie Description",
-          //                  Price=27.75,
-          //                  ImageURL="https://dotnethow.net/images/movies/movie-7.jpeg",
-          //                  StartDate=DateTime.Now.AddDays(-10),
-          //                  EndDate=DateTime.Now.AddDays(2),
-          //                  CinemaId=1,
-          //                  ProducerId=3,
-          //                  MovieCategory=MovieCategory.Cartoon
-          //                  },
-          //                  new Movie()
-          //                  {
-          //                  Name="Cold Sales",
-          //                  Description="This is the Cold Sales Movie Description",
-          //                  Price=39.50,
-          //                  ImageURL="https://dotnethow.net/images/movies/movie-8.jpeg",
-          //                  StartDate=DateTime.Now.AddDays(-3),
-          //                  EndDate=DateTime.Now.AddDays(20),
-          //                  CinemaId=1,
-          //                  ProducerId=5,
-          //                  MovieCategory=MovieCategory.Drama
-          //                  },
+                           new Movie()
+                            {
+                            Name="Scoob",
+                            Description="This is the Scoob Movie Description",
+                            Price=27.75,
+                            ImageURL="https://dotnethow.net/images/movies/movie-7.jpeg",
+                            StartDate=DateTime.Now.AddDays(-10),
+                            EndDate=DateTime.Now.AddDays(2),
+                            CinemaId=39,
+                            ProducerId=59,
+                            MovieCategory=MovieCategory.Cartoon
+                            },
+                            new Movie()
+                            {
+                            Name="Cold Sales",
+                            Description="This is the Cold Sales Movie Description",
+                            Price=39.50,
+                            ImageURL="https://dotnethow.net/images/movies/movie-8.jpeg",
+                            StartDate=DateTime.Now.AddDays(-3),
+                            EndDate=DateTime.Now.AddDays(20),
+                            CinemaId=40,
+                            ProducerId=60,
+                            MovieCategory=MovieCategory.Drama
+                            }
+                    }
+                    );
+                     context.SaveChanges();
 
-          //                   new Movie()
-          //                  {
-          //                  Name="Race",
-          //                  Description="This is the Race Movie Description",
-          //                  Price=39.50,
-          //                  ImageURL="https://dotnethow.net/images/movies/movie-6.jpeg",
-          //                  StartDate=DateTime.Now.AddDays(-10),
-          //                  EndDate=DateTime.Now.AddDays(-5),
-          //                  CinemaId=1,
-          //                  ProducerId=2,
-          //                  MovieCategory=MovieCategory.Documentory
-          //                  }
-
-          //          }
-          //          );
-          ////          context.SaveChanges();
-
-          //      }
+                }
                 //Producers
                 if (!context.Producers.Any())
                 {
@@ -177,101 +163,40 @@ namespace eTickets.Data
                     context.SaveChanges();
                 }
                 //Actors_Movies
-                //if (!context.Actors_Movies.Any())
-                //{
-                //    context.Actors_Movies.AddRange(new List<Actor_Movie>()
-                //    {
-                //        new Actor_Movie()
-                //        {
-                //            ActorId=1,
-                //            MovieId=1
-                //        },
-                //        new Actor_Movie()
-                //        {
-                //            ActorId=3,
-                //            MovieId=1
-                //        },
-                //        new Actor_Movie()
-                //        {
-                //            ActorId=1,
-                //            MovieId=2
-                //        },
-                //        new Actor_Movie()
-                //        {
-                //            ActorId=4,
-                //            MovieId=2
-                //        },
-                //        new Actor_Movie()
-                //        {
-                //            ActorId=1,
-                //            MovieId=3
-                //        },
-                //        new Actor_Movie()
-                //        {
-                //            ActorId=2,
-                //            MovieId=3
-                //        },
-                //        new Actor_Movie()
-                //        {
-                //            ActorId=5,
-                //            MovieId=3
-                //        },
-                //        new Actor_Movie()
-                //        {
-                //            ActorId=2,
-                //            MovieId=4
-                //        },
-                //         new Actor_Movie()
-                //        {
-                //            ActorId=3,
-                //            MovieId=4
-                //        },
-                //          new Actor_Movie()
-                //        {
-                //            ActorId=4,
-                //            MovieId=4
-                //        },
-                //        new Actor_Movie()
-                //        {
-                //            ActorId=2,
-                //            MovieId=5
-                //        },
-                //          new Actor_Movie()
-                //        {
-                //            ActorId=3,
-                //            MovieId=5
-                //        },
-                //        new Actor_Movie()
-                //        {
-                //            ActorId=4,
-                //            MovieId=5
-                //        },
-                //        new Actor_Movie()
-                //        {
-                //            ActorId=5,
-                //            MovieId=5
-                //        },
-                //        new Actor_Movie()
-                //        {
-                //            ActorId=3,
-                //            MovieId=6
+                if (!context.Actors_Movies.Any())
+                {
+                    context.Actors_Movies.AddRange(new List<Actor_Movie>()
+                    {
+                        new Actor_Movie()
+                        {
+                            ActorId=6,
+                            MovieId=22
+                        },
+                        new Actor_Movie()
+                        {
+                            ActorId=7,
+                            MovieId=23
+                        },
+                        new Actor_Movie()
+                        {
+                            ActorId=8,
+                            MovieId=24
+                        },
+                        new Actor_Movie()
+                        {
+                            ActorId=9,
+                            MovieId=25
+                        },
+                        new Actor_Movie()
+                        {
+                            ActorId=10,
+                            MovieId=26
+                        }
+                    }
+                        );
+                    context.SaveChanges();
 
-                //        },
-                //         new Actor_Movie()
-                //        {
-                //            ActorId=4,
-                //            MovieId=6
-                //        },
-                //          new Actor_Movie()
-                //        {
-                //            ActorId=5,
-                //            MovieId=6
-                //        }
-                //    }
-                //        );
-                //context.SaveChanges();
-
-                //}
+                }
                 //Actors
                 if (!context.Actors.Any())
                 {
