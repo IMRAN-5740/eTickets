@@ -1,0 +1,54 @@
+﻿@using eTickets.Models;
+@using Microsoft.AspNetCore.Http
+@model IEnumerable<Cinema>
+@{
+    ViewData["Title"] = "List of Cinemas";
+    int serialNo = 1;
+}
+
+<h4 style="text-align:center;color:red">Cinemas List</h4>
+<style>
+    th {
+        text-align: center;
+        color: blue;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Serial No</th>
+                    <th>@Html.DisplayNameFor(model=>model.Logo)</th>
+                    <th>@Html.DisplayNameFor(model=>model.Name)</th>
+                    <th>@Html.DisplayNameFor(model=>model.Description)</th>
+                    <th>Action</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                @foreach (var item in Model.ToList())
+                {
+
+                    <tr>
+                        <td class="align-middle">@(serialNo++)</td>
+                        <td class="align-middle"> <img class="rounded-circle" src="@item.Logo" alt="@item.Name" style="max-width:150px" /></td>
+                        <td class="align-middle">@Html.DisplayFor(modelItem=>item.Name)</td>
+                        <td class="align-middle">@Html.DisplayFor(modelItem=>item.Description)</td>
+                        <td class="align-middle">
+                            <div class="btn-group" style="width:150px;">
+                                <a asp-action="Edit" class="btn btn-primary" asp-route-id="@Model"><i class="far fa-edit"></i></a>
+                                <a asp-action="Details" class="btn btn-success" asp-route-id="@Model"><i class="fa-solid fa-list"></i></a>
+                                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@Model"><i class="fas fa-trash-alt"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
