@@ -1,44 +1,48 @@
-﻿@model Actor
+﻿@using Microsoft.AspNetCore.Http
+@using eTickets.Models;
+@model Actor
+
 @{
-    ViewData["Title"] = "Create a New Actor";
+    ViewData["Title"] = "Details of a Actor";
 }
 
 <div class="row text">
         <div class="col-md-8  offset-2">
-                <h4 >Add a new Actor</h4>
+                <h4 >Details for @Model.FullName</h4>
                 <div class="row ">
                             <div class="col-md-8  offset-2">
-                                <form asp-action="Create">
-                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                               
+                                   @* <div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
 
 
-                                    <div class="form-group text-center">
+                                     <div class="form-group text-center">
                                     <img id="ProfilePicturePreview" />
                                      </div>
             
                                 <div class="form-group">
                                     <label class="control-label" asp-for="ProfilePictureURL"></label>
-                                    <input  class="form-control" asp-for="ProfilePictureURL"/>
+                                    <input  class="form-control" asp-for="ProfilePictureURL" readonly="readonly"/>
                                     <span asp-validation-for="ProfilePictureURL" class="text-danger"> </span>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="control-label" asp-for="FullName"></label>
-                                    <input class="form-control" asp-for="FullName" />
+                                    <input class="form-control" asp-for="FullName" readonly="readonly" />
                                     <span asp-validation-for="FullName" class="text-danger"> </span>
                                 </div>
 
                                     <div class="form-group">
                                         <label class="control-label" asp-for="Bio"></label>
-                                        <input class="form-control" asp-for="Bio" />
+                                        <input class="form-control" asp-for="Bio"  readonly="readonly"/>
                                         <span asp-validation-for="Bio" class="text-danger"> </span>
                                     </div>
                                     <div class="form-group">
-                                        <input type="submit" value="Create" class="btn btn-outline-success float-end"/>
+                                       @* <input type="submit" value="Create" class="btn btn-outline-success float-end"/>*@
+                                        <a class="btn btn-outline-success float-right" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
                                         <a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
                                     </div>
 
-                                </form>
+                              
             
                              </div>
                 </div>
@@ -53,15 +57,15 @@
         $(document).ready(function)()
         {
              var output = document.getElementById('ProfilePicturePreview');
-            output.src=$(ProfilePictureURL).val();
+            output.src=$("#ProfilePictureURL").val();
         }
     </script>
-    <script>
+   //<script>
 
-        $("#ProfilePictureURL").on("change", function () {
-            var output = document.getElementById('ProfilePicturePreview');
-            output.src=$(this).val();
-        })
-    </script>
+   //     $("#ProfilePictureURL").on("change", function () {
+   //         var output = document.getElementById('ProfilePicturePreview');
+   //         output.src=$(this).val();
+   //     })
+   // </script>
 
 }
