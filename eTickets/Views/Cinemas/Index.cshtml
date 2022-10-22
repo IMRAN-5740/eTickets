@@ -38,9 +38,9 @@
                         <td class="align-middle">@Html.DisplayFor(modelItem=>item.Description)</td>
                         <td class="align-middle">
                             <div class="btn-group" style="width:150px;">
-                                <a asp-action="Edit" class="btn btn-primary" asp-route-id="@Model"><i class="far fa-edit"></i></a>
-                                <a asp-action="Details" class="btn btn-success" asp-route-id="@Model"><i class="fa-solid fa-list"></i></a>
-                                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@Model"><i class="fas fa-trash-alt"></i></a>
+                                <a asp-action="Edit" class="btn btn-primary" asp-route-id="@item.Id"><i class="far fa-edit"></i></a>
+                                <a asp-action="Details" class="btn btn-success" asp-route-id="@item.Id"><i class="fa-solid fa-list"></i></a>
+                                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.Id"><i class="fas fa-trash-alt"></i></a>
                             </div>
                         </td>
                     </tr>
@@ -49,6 +49,12 @@
             </tbody>
         </table>
     </div>
+</div>
+
+
+<div style="position:fixed; right:25px;bottom:25px; z-index:100" class="text-white">
+    <a asp-controller="Cinemas" asp-action="Create" class="btn btn-success"><i class="bi bi-plus-circle"></i>Add New Cinema</a>
+
 </div>
 
 
