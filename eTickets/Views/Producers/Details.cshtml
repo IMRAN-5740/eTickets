@@ -1,8 +1,8 @@
 ﻿@using eTickets.Models;
-@model Actor
+@model Producer
 
 @{
-    ViewData["Title"] = "Details of a Actor";
+    ViewData["Title"] = "Details of a Producer";
 }
 
 <div class="row text">
@@ -35,7 +35,7 @@
                                     <div class="form-group">
                                        @* <input type="submit" value="Create" class="btn btn-outline-success float-end"/>*@
                                         <a class="btn btn-outline-success float-end" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
-                                        <a class="btn btn-outline-info" asp-action="Index">Back to Actors List</a>
+                                        <a class="btn btn-outline-info" asp-action="Index">Back to Producers List</a>
                                     </div>
 
                              </div>

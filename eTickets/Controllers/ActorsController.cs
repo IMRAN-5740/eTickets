@@ -14,7 +14,7 @@ namespace eTickets.Controllers
         {
             _service = service;
         }
-
+        //Get All Actors
         public async Task< IActionResult> Index()
         {
 
@@ -24,13 +24,13 @@ namespace eTickets.Controllers
         }
 
 
-        //Get/Actors/Create
+        //Get/Actor/Create
         public async Task<IActionResult> Create()
         {
             return View();
         }
 
-        //Post/Actors/Create
+        //Post/Actor/Create
         [HttpPost]
         public async Task<IActionResult> Create([Bind("FullName,ProfilePictureURL,Bio")]Actor actor)
         {
@@ -56,7 +56,7 @@ namespace eTickets.Controllers
 
 
 
-        //Get/Actors/Update
+        //Get/Actor/Update
         public async Task<IActionResult> Edit(int id)
         {
             var actorDetails = await _service.GetByIdAsync(id);
@@ -68,7 +68,7 @@ namespace eTickets.Controllers
 
         }
 
-        //Post/Actors/Update
+        //Post/Actor/Update
         [HttpPost]
         public async Task<IActionResult> Edit(int id, [Bind("Id, FullName,ProfilePictureURL,Bio")] Actor actor)
         {
@@ -82,7 +82,7 @@ namespace eTickets.Controllers
         }
 
 
-        //Get/Actors/Update
+        //Get/Actor/Delete
         public async Task<IActionResult> Delete(int id)
         {
             var actorDetails = await _service.GetByIdAsync(id);
@@ -94,7 +94,7 @@ namespace eTickets.Controllers
 
         }
 
-        //Post/Actors/Update
+        //Post/Actor/Delete
         [HttpPost]
         [ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int id)
