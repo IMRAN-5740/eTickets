@@ -1,4 +1,5 @@
-﻿using eTickets.Data;
+﻿using com.sun.xml.@internal.bind.v2.model.core;
+using eTickets.Data;
 using eTickets.Data.Services;
 using eTickets.Models;
 using Microsoft.AspNetCore.Http;
@@ -42,6 +43,10 @@ namespace eTickets.Controllers
             
         }
 
+
+
+
+
         //Get/Actor/Details
         public async Task<IActionResult> Details(int id)
         {
@@ -52,5 +57,63 @@ namespace eTickets.Controllers
             }
             return View(actorDetails);
         }
+
+
+
+        //Get/Actors/Update
+        public async Task<IActionResult> Edit(int id)
+        {
+            var actorDetails = await _service.GetByIdAsync(id);
+            if (actorDetails == null)
+            {
+                return View("Not Found");
+            }
+            return View(actorDetails);
+
+        }
+
+        //Post/Actors/Update
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, [Bind("Id, FullName,ProfilePictureURL,Bio")] Actor actor)
+        {
+            if (ModelState.IsValid)
+            {
+                return View(actor);
+            }
+
+            await _service.UpdateAsync(id, actor);
+            return RedirectToAction(nameof(Index));
+        }
+
+
+        //Get/Actors/Update
+        public async Task<IActionResult> Delete(int id)
+        {
+            var actorDetails = await _service.GetByIdAsync(id);
+            if (actorDetails == null)
+            {
+                return View("Not Found");
+            }
+            return View(actorDetails);
+
+        }
+
+        //Post/Actors/Update
+        [HttpPost]
+        [ActionName("Delete")]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var actorDetails = await _service.GetByIdAsync(id);
+            if (actorDetails == null)
+            {
+                return View("Not Found");
+            }
+            await _service.DeleteAsync(id);
+            return RedirectToAction(nameof(Index));
+        }
+
     }
+
+
 }
+
