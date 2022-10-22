@@ -1,5 +1,5 @@
 ﻿@using eTickets.Models;
-@model Producer
+@model Cinema
 
 @{
     ViewData["Title"] = "Details of a Producer";
@@ -7,35 +7,35 @@
 
 <div class="row text">
         <div class="col-md-8  offset-2">
-                <h4 style="text-align:center;color:red">Details for @Model.FullName</h4>
+                <h4 style="text-align:center;color:red">Details for @Model.Name</h4>
                 <div class="row ">
                             <div class="col-md-8  offset-2">
 
                                      <div class="form-group text-center">
-                                    <img src="@Model.ProfilePictureURL" id="ProfilePicturePreview"  class="border-info rounded-circle" style="max-width:150px"/>
+                                    <img src="@Model.Logo" id="LogoView"  class="border-info rounded-circle" style="max-width:150px"/>
                                      </div>
             
                                 <div class="form-group">
-                                    <label class="control-label" asp-for="ProfilePictureURL"></label>
-                                    <input  class="form-control" asp-for="ProfilePictureURL" readonly="readonly"/>
+                                    <label class="control-label" asp-for="Logo"></label>
+                                    <input class="form-control" asp-for="Logo" readonly="readonly" />
                                     
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="control-label" asp-for="FullName"></label>
-                                    <input class="form-control" asp-for="FullName" readonly="readonly" />
+                                    <label class="control-label" asp-for="Name"></label>
+                                    <input class="form-control" asp-for="Name" readonly="readonly" />
                                     
                                 </div>
 
                                     <div class="form-group">
-                                        <label class="control-label" asp-for="Bio"></label>
-                                        <input class="form-control" asp-for="Bio"  readonly="readonly"/>
+                                        <label class="control-label" asp-for="Description"></label>
+                                        <input class="form-control" asp-for="Description"  readonly="readonly"/>
                                        
                                     </div>
                                     <div class="form-group">
                                        @* <input type="submit" value="Create" class="btn btn-outline-success float-end"/>*@
                                         <a class="btn btn-outline-success float-end" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
-                                        <a class="btn btn-outline-info" asp-action="Index">Back to Producers List</a>
+                                        <a class="btn btn-outline-info" asp-action="Index">Back to Cinemas List</a>
                                     </div>
 
                              </div>
@@ -50,14 +50,14 @@
     <script>
         $(document).ready(function)()
         {
-             var output = document.getElementById('ProfilePicturePreview');
-            output.src=$("#ProfilePictureURL").val();
+             var output = document.getElementById('LogoView');
+            output.src=$("#Logo").val();
         }
     </script>
     <script>
 
-        $("#ProfilePictureURL").on("change", function () {
-            var output = document.getElementById('ProfilePicturePreview');
+        $("#Logo").on("change", function () {
+            var output = document.getElementById('LogoView');
             output.src = $(this).val();
         })
     </script>

@@ -30,96 +30,108 @@ namespace eTickets.Data
                             ProducerId=56,
                             MovieCategory=MovieCategory.Documentory
                         },
+                        new Movie()
+                           {
+                           Name="The Shawshank Redeption",
+                           Description="This is the Shawshank Redeption Movie Description",
+                           Price=29.50,
+                           ImageURL="https://dotnethow.net/images/movies/movie-1.jpeg",
+                           StartDate=DateTime.Now,
+                           EndDate=DateTime.Now.AddDays(4),
+                           CinemaId=37,
+                           ProducerId=57,
+                           MovieCategory=MovieCategory.Action
+                           },
                          new Movie()
-                            {
-                            Name="The Shawshank Redeption",
-                            Description="This is the Shawshank Redeption Movie Description",
-                            Price=29.50,
-                            ImageURL="https://dotnethow.net/images/movies/movie-1.jpeg",
-                            StartDate=DateTime.Now,
-                            EndDate=DateTime.Now.AddDays(4),
-                            CinemaId=37,
-                            ProducerId=57,
-                            MovieCategory=MovieCategory.Action
-                            },
+                           {
+                           Name="Ghost",
+                           Description="This is the Ghost Movie Description",
+                           Price=39.50,
+                           ImageURL="https://dotnethow.net/images/movies/movie-4.jpeg",
+                           StartDate=DateTime.Now,
+                           EndDate=DateTime.Now.AddDays(7),
+                           CinemaId=38,
+                           ProducerId=58,
+                           MovieCategory=MovieCategory.Horror
+                           },
+
                           new Movie()
-                            {
-                            Name="Ghost",
-                            Description="This is the Ghost Movie Description",
-                            Price=39.50,
-                            ImageURL="https://dotnethow.net/images/movies/movie-4.jpeg",
-                            StartDate=DateTime.Now,
-                            EndDate=DateTime.Now.AddDays(7),
-                            CinemaId=38,
-                            ProducerId=58,
-                            MovieCategory=MovieCategory.Horror
-                            },
-
+                           {
+                           Name="Scoob",
+                           Description="This is the Scoob Movie Description",
+                           Price=27.75,
+                           ImageURL="https://dotnethow.net/images/movies/movie-7.jpeg",
+                           StartDate=DateTime.Now.AddDays(-10),
+                           EndDate=DateTime.Now.AddDays(2),
+                           CinemaId=39,
+                           ProducerId=59,
+                           MovieCategory=MovieCategory.Cartoon
+                           },
                            new Movie()
-                            {
-                            Name="Scoob",
-                            Description="This is the Scoob Movie Description",
-                            Price=27.75,
-                            ImageURL="https://dotnethow.net/images/movies/movie-7.jpeg",
-                            StartDate=DateTime.Now.AddDays(-10),
-                            EndDate=DateTime.Now.AddDays(2),
-                            CinemaId=39,
-                            ProducerId=59,
-                            MovieCategory=MovieCategory.Cartoon
-                            },
-                            new Movie()
-                            {
-                            Name="Cold Sales",
-                            Description="This is the Cold Sales Movie Description",
-                            Price=39.50,
-                            ImageURL="https://dotnethow.net/images/movies/movie-8.jpeg",
-                            StartDate=DateTime.Now.AddDays(-3),
-                            EndDate=DateTime.Now.AddDays(20),
-                            CinemaId=40,
-                            ProducerId=60,
-                            MovieCategory=MovieCategory.Drama
+                           {
+                           Name="Cold Sales",
+                           Description="This is the Cold Sales Movie Description",
+                           Price=39.50,
+                           ImageURL="https://dotnethow.net/images/movies/movie-8.jpeg",
+                           StartDate=DateTime.Now.AddDays(-3),
+                           EndDate=DateTime.Now.AddDays(20),
+                           CinemaId=40,
+                           ProducerId=60,
+                           MovieCategory=MovieCategory.Drama
+                           },
+                                     new Movie()
+                                    {
+                                    Name="Race",
+                                    Description="This is the Race Movie Description",
+                                    Price=39.50,
+                                    ImageURL="https://i2.cinestaan.com/image-bank/1500-1500/59001-60000/59287.jpg",
+                                    StartDate=DateTime.Now.AddDays(-3),
+                                    EndDate=DateTime.Now.AddDays(20),
+                                    CinemaId=42,
+                                    ProducerId=63,
+                                    MovieCategory=MovieCategory.Action
+                                    }
                             }
-                    }
-                    );
-                     context.SaveChanges();
+                            );
+                    context.SaveChanges();
 
-                }
-                //Producers
+                    }
+                ////Producers
                 if (!context.Producers.Any())
                 {
                     context.Producers.AddRange(new List<Producer>()
-                    {
-                        new Producer()
                         {
-                            FullName="Producer-1",
-                            ProfilePictureURL="https://dotnethow.net/images/producers/producer-1.jpeg",
-                            Bio="This is the description of the first Producer"
-                        },
-                        new Producer()
-                        {
-                            FullName="Producer-2",
-                            ProfilePictureURL="https://dotnethow.net/images/producers/producer-2.jpeg ",
-                            Bio="This is the description of the second Producer"
-                        },
-                        new Producer()
-                        {
-                            FullName="Producer-3",
-                            ProfilePictureURL="https://dotnethow.net/images/producers/producer-3.jpeg ",
-                            Bio="This is the description of the third Producer"
-                        },
-                        new Producer()
-                        {
-                            FullName="Producer-4",
-                            ProfilePictureURL="https://dotnethow.net/images/producers/producer-4.jpeg ",
-                            Bio="This is the description of the fourth Producer"
-                        },
-                        new Producer()
-                        {
-                            FullName="Producer-5",
-                            ProfilePictureURL="https://dotnethow.net/images/producers/producer-5.jpeg ",
-                            Bio="This is the description of the fifth Producer"
+                            new Producer()
+                            {
+                                FullName="Producer-1",
+                                ProfilePictureURL="https://dotnethow.net/images/producers/producer-1.jpeg",
+                                Bio="This is the description of the first Producer"
+                            },
+                            new Producer()
+                            {
+                                FullName="Producer-2",
+                                ProfilePictureURL="https://dotnethow.net/images/producers/producer-2.jpeg ",
+                                Bio="This is the description of the second Producer"
+                            },
+                            new Producer()
+                            {
+                                FullName="Producer-3",
+                                ProfilePictureURL="https://dotnethow.net/images/producers/producer-3.jpeg ",
+                                Bio="This is the description of the third Producer"
+                            },
+                            new Producer()
+                            {
+                                FullName="Producer-4",
+                                ProfilePictureURL="https://dotnethow.net/images/producers/producer-4.jpeg ",
+                                Bio="This is the description of the fourth Producer"
+                            },
+                            new Producer()
+                            {
+                                FullName="Producer-5",
+                                ProfilePictureURL="https://dotnethow.net/images/producers/producer-5.jpeg ",
+                                Bio="This is the description of the fifth Producer"
+                            }
                         }
-                    }
                     );
                     context.SaveChanges();
                 }
@@ -170,8 +182,8 @@ namespace eTickets.Data
                 }
                 //Actors_Movies
                 if (!context.Actors_Movies.Any())
-                {
-                    context.Actors_Movies.AddRange(new List<Actor_Movie>()
+                    {
+                        context.Actors_Movies.AddRange(new List<Actor_Movie>()
                     {
                         new Actor_Movie()
                         {
@@ -197,6 +209,11 @@ namespace eTickets.Data
                         {
                             ActorId=10,
                             MovieId=26
+                        },
+                         new Actor_Movie()
+                        {
+                            ActorId=11,
+                            MovieId=27
                         }
                     }
                         );
