@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\Base\**" />
+    <Content Remove="Data\Base\**" />
+    <EmbeddedResource Remove="Data\Base\**" />
+    <None Remove="Data\Base\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Cqrs" Version="4.4.1.21" />
     <PackageReference Include="IKVM" Version="8.2.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.10" />

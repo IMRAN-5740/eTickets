@@ -28,18 +28,15 @@ namespace eTickets.Data.Services
 
         }
 
-
         public async Task<IEnumerable<Actor>> GetAllAsync()
         {
-            var actorsResult = await _context.Actors.ToListAsync();
-            return actorsResult;
+            var result = await _context.Actors.ToListAsync();
+            return result;
         }
-
-
 
         public async Task<Actor> GetByIdAsync(int id)
         {
-            var result =await _context.Actors.FirstOrDefaultAsync(c=>c.Id==id);
+            var result = await _context.Actors.FirstOrDefaultAsync(c => c.Id == id);
             return result;
         }
 
