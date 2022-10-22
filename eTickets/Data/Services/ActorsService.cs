@@ -36,7 +36,7 @@ namespace eTickets.Data.Services
 
         public async Task<Actor> GetByIdAsync(int id)
         {
-            var result = _context.Actors.FirstOrDefault(c=>c.Id==id);
+            var result =await _context.Actors.FirstOrDefaultAsync(c=>c.Id==id);
             return result;
         }
 
