@@ -12,21 +12,18 @@ namespace eTickets.Data.Base
         {
             _context = context;
         }
-
-        //public async Task AddAsync(T entity)
-        //{
-        //   await _context.Set<T>().AddAsync(entity);
-        //}
-        //Duplicate Lambda Expression diyeo dkehano jay
         public async Task AddAsync(T entity) =>await _context.Set<T>().AddAsync(entity);
-        
 
+        public async Task UpdateAsync(int id, T entity)
+        {
+            EntityEntry entityEntry = _context.Entry<T>(entity);
+            entityEntry.State = EntityState.Modified;
+        }
         public async Task DeleteAsync(int id)
         {
             var entity = await _context.Set<T>().FirstOrDefaultAsync(c => c.Id == id);
             EntityEntry entityEntry = _context.Entry<T>(entity);
             entityEntry.State = EntityState.Deleted;
-
         }
 
         public async Task<IEnumerable<T>> GetAllAsync()=> await _context.Set<T>().ToListAsync();
@@ -36,10 +33,6 @@ namespace eTickets.Data.Base
           
 
      
-        public  async Task UpdateAsync(int id, T entity)
-        {
-            EntityEntry entityEntry = _context.Entry<T>(entity);
-            entityEntry.State = EntityState.Modified;
-        }
+       
     }
 }

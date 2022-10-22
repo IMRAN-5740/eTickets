@@ -20,6 +20,13 @@ namespace eTickets.Data.Services
             await _context.SaveChangesAsync();
         }
 
+        public async Task<Actor> UpdateAsync(int id, Actor newActor)
+        {
+            _context.Update(newActor);
+            await _context.SaveChangesAsync();
+            return newActor;
+
+        }
         public async Task DeleteAsync(int id)
         {
             var result =await _context.Actors.FirstOrDefaultAsync(c => c.Id == id);
@@ -40,13 +47,7 @@ namespace eTickets.Data.Services
             return result;
         }
 
-        public async Task<Actor> UpdateAsync(int id, Actor newActor)
-        {
-            _context.Update(newActor);
-          await  _context.SaveChangesAsync();
-            return newActor;
-
-        }
+      
 
        
     }

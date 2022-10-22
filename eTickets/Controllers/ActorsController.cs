@@ -43,10 +43,6 @@ namespace eTickets.Controllers
             
         }
 
-
-
-
-
         //Get/Actor/Details
         public async Task<IActionResult> Details(int id)
         {
